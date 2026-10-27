@@ -809,3 +809,117 @@ html {
     padding: 18px;
   }
 }
+
+
+
+
+/* ===== Step 11: Portfolio Design Enhancements ===== */
+
+/* Smooth scrolling between sections */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 100px;
+}
+
+/* Consistent transitions */
+button,
+a,
+.project-card,
+.skill-card,
+.service-card {
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease,
+    background-color 0.3s ease;
+}
+
+/* More polished project cards */
+.project-card {
+  overflow: hidden;
+  border: 1px solid rgba(139, 92, 246, 0.18);
+  border-radius: 18px;
+}
+
+.project-card:hover {
+  transform: translateY(-7px);
+  border-color: rgba(139, 92, 246, 0.7);
+  box-shadow: 0 18px 45px rgba(91, 33, 182, 0.18);
+}
+
+/* Project screenshot hover effect */
+.project-image img {
+  transition: transform 0.45s ease;
+}
+
+.project-card:hover .project-image img {
+  transform: scale(1.035);
+}
+
+/* Better button hover */
+.button {
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    filter 0.25s ease;
+}
+
+.button:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.08);
+}
+
+.button:active {
+  transform: translateY(0);
+}
+
+/* Navigation link underline */
+.navbar a {
+  position: relative;
+}
+
+.navbar a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #8b5cf6, #38bdf8);
+  transition: width 0.25s ease;
+}
+
+.navbar a:hover::after {
+  width: 100%;
+}
+
+/* Form focus effects */
+.contact-form input,
+.contact-form textarea {
+  transition:
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: #8b5cf6;
+  box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.14);
+}
+
+/* Respect reduced-motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

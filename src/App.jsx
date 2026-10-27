@@ -1,6 +1,11 @@
 import './App.css'
-
+import emailjs from '@emailjs/browser';
+import { useState } from 'react';
 function App() {
+
+  const [sending, setSending] = useState(false);
+const [formStatus, setFormStatus] = useState('');
+
   return (
     <div className="portfolio">
       <nav className="navbar">
@@ -250,10 +255,32 @@ function App() {
       </a>
     </div>
 
-    <form className="contact-form" onSubmit={(e) => {
-      e.preventDefault();
-      alert("Contact form UI is ready. Email delivery will be connected next.");
-    }}>
+    <form className="contact-form" onSubmit={async (e) => {
+  e.preventDefault();
+
+  const form = e.currentTarget;
+  setSending(true);
+  setFormStatus('');
+
+  try {
+    await emailjs.sendForm(
+      import.meta.env.VITE_EMAILJS_SERVICE_ID,
+      import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+      form,
+      {
+        publicKey: import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
+      }
+    );
+
+    setFormStatus('Message sent successfully!');
+    form.reset();
+  } catch (error) {
+    console.error('EmailJS error:', error);
+    setFormStatus('Message could not be sent. Please try again.');
+  } finally {
+    setSending(false);
+  }
+}} >
       <label htmlFor="contact-name">Your name</label>
       <input id="contact-name" name="name" type="text"
         placeholder="Enter your name" required />
@@ -271,9 +298,18 @@ function App() {
         placeholder="Tell me about your opportunity..."
         rows="5" required />
 
-      <button className="button primary" type="submit">
-        Send Message ↗
-      </button>
+      <button
+  className="button primary"
+  type="submit"
+  disabled={sending}
+>
+  {sending ? 'Sending...' : 'Send Message ↗'}
+</button>
+
+<p role="status" aria-live="polite">
+  {formStatus}
+</p>
+
     </form>
   </div>
 </section>
