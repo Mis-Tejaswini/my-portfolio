@@ -5,6 +5,7 @@ function App() {
 
   const [sending, setSending] = useState(false);
 const [formStatus, setFormStatus] = useState('');
+const [quickContactOpen, setQuickContactOpen] = useState(false);
 
   return (
     <div className="portfolio">
@@ -321,6 +322,88 @@ const [formStatus, setFormStatus] = useState('');
       </footer>
     </div>
   )
+
+  
+{/* Floating Quick Contact Button */}
+<button
+  type="button"
+  className="quick-contact-fab"
+  onClick={() => setQuickContactOpen(!quickContactOpen)}
+  aria-label={quickContactOpen ? "Close quick contact" : "Open quick contact"}
+  aria-expanded={quickContactOpen}
+>
+  <span className="quick-contact-fab-icon">
+    {quickContactOpen ? "×" : "✉"}
+  </span>
+  {!quickContactOpen && <span className="quick-contact-tooltip">Quick Contact</span>}
+</button>
+
+{/* Quick Contact Popup */}
+{quickContactOpen && (
+  <div className="quick-contact-panel">
+    <div className="quick-contact-header">
+      <div>
+        <span className="quick-contact-eyebrow">LET'S CONNECT</span>
+        <h3>Let's talk!</h3>
+        <p>Have a project in mind? Send me a message.</p>
+      </div>
+      <button
+        type="button"
+        className="quick-contact-close"
+        onClick={() => setQuickContactOpen(false)}
+        aria-label="Close contact popup"
+      >
+        ×
+      </button>
+    </div>
+
+    <form
+      className="quick-contact-form"
+      onSubmit={async (e) => {
+        e.preventDefault();
+        const form = e.currentTarget;
+        setSending(true);
+        setFormStatus("");
+
+        try {
+          await emailjs.sendForm(
+            import.meta.env.VITE_EMAILJS_SERVICE_ID,
+            import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+            form,
+            { publicKey: import.meta.env.VITE_EMAILJS_PUBLIC_KEY }
+          );
+
+          setFormStatus("Message sent successfully!");
+          form.reset();
+        } catch (error) {
+          console.error("EmailJS error:", error);
+          setFormStatus("Could not send. Please try again.");
+        } finally {
+          setSending(false);
+        }
+      }}
+    >
+      <input name="name" type="text" placeholder="Your name" required />
+      <input name="email" type="email" placeholder="Your email" required />
+      <input name="subject" type="text" placeholder="Subject" required />
+      <textarea
+        name="message"
+        placeholder="Tell me about your project..."
+        rows="4"
+        required
+      />
+
+      <button type="submit" className="button primary" disabled={sending}>
+        {sending ? "Sending..." : "Send Message ↗"}
+      </button>
+
+      <p className="quick-contact-status" role="status" aria-live="polite">
+        {formStatus}
+      </p>
+    </form>
+  </div>
+)}
+
 }
 
 export default App
