@@ -231,6 +231,7 @@ useEffect(() => {
       <div className="about-glow-circle"></div>
       <div className="about-orbit about-orbit-one"></div>
       <div className="about-orbit about-orbit-two"></div>
+      <img src="public/images/about-tejaswini.png" alt="Tejaswini, Full-Stack Developer" className="about-profile-image"/>
 
       <div className="about-code-window">
         <div className="about-code-top">
