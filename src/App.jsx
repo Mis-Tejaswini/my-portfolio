@@ -1,11 +1,47 @@
 import './App.css'
 import emailjs from '@emailjs/browser';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 function App() {
 
   const [sending, setSending] = useState(false);
 const [formStatus, setFormStatus] = useState('');
 const [quickContactOpen, setQuickContactOpen] = useState(false);
+
+
+const [autoPopupDismissed, setAutoPopupDismissed] = useState(() => {
+  try {
+    return sessionStorage.getItem('quickContactDismissed') === 'true';
+  } catch {
+    return false;
+  }
+});
+
+useEffect(() => {
+  if (autoPopupDismissed || quickContactOpen) return;
+
+  let timer;
+
+  try {
+    if (sessionStorage.getItem('quickContactShown') === 'true') {
+      return;
+    }
+  } catch {
+    // Continue without session storage if unavailable.
+  }
+
+  timer = window.setTimeout(() => {
+    setQuickContactOpen(true);
+
+    try {
+      sessionStorage.setItem('quickContactShown', 'true');
+    } catch {
+      // Popup still works if storage is unavailable.
+    }
+  }, 8000);
+
+  return () => window.clearTimeout(timer);
+}, [autoPopupDismissed, quickContactOpen]);
+
 
   return (
     <div className="portfolio">
@@ -251,8 +287,8 @@ const [quickContactOpen, setQuickContactOpen] = useState(false);
         and let's discuss how we can work together.
       </p>
 
-      <a href="mailto:your.email@example.com">
-        ✉️ your.email@example.com
+      <a href="mailto:bambaltejaswini@gmail.com">
+        ✉️ bambaltejaswini@gmail.com
       </a>
     </div>
 
@@ -320,15 +356,23 @@ const [quickContactOpen, setQuickContactOpen] = useState(false);
         <p>© {new Date().getFullYear()} MyPortfolio. All rights reserved.</p>
         <a href="#home">Back to top ↑</a>
       </footer>
-    </div>
-  )
 
-  
-{/* Floating Quick Contact Button */}
+      {/* Floating Quick Contact Button */}
 <button
   type="button"
   className="quick-contact-fab"
-  onClick={() => setQuickContactOpen(!quickContactOpen)}
+  onClick={() => {
+  if (quickContactOpen) {
+    setQuickContactOpen(false);
+    setAutoPopupDismissed(true);
+
+    try {
+      sessionStorage.setItem('quickContactDismissed', 'true');
+    } catch {}
+  } else {
+    setQuickContactOpen(true);
+  }
+}}
   aria-label={quickContactOpen ? "Close quick contact" : "Open quick contact"}
   aria-expanded={quickContactOpen}
 >
@@ -350,10 +394,16 @@ const [quickContactOpen, setQuickContactOpen] = useState(false);
       <button
         type="button"
         className="quick-contact-close"
-        onClick={() => setQuickContactOpen(false)}
+        onClick={() => {
+  setQuickContactOpen(false);
+  setAutoPopupDismissed(true);
+
+  try {
+    sessionStorage.setItem('quickContactDismissed', 'true');
+  } catch {}
+}}
         aria-label="Close contact popup"
       >
-        ×
       </button>
     </div>
 
@@ -403,6 +453,10 @@ const [quickContactOpen, setQuickContactOpen] = useState(false);
     </form>
   </div>
 )}
+
+    </div>
+  )
+  
 
 }
 
