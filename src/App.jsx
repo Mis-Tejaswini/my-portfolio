@@ -142,23 +142,157 @@ useEffect(() => {
 </div>
       </section>
 
-       <section className="about section" id="about">
-  <p className="eyebrow">ABOUT ME</p>
-  <h2>Developer by passion. <span>Problem solver by nature.</span></h2>
+       
+<section className="about about-redesign section" id="about">
+  <div className="about-layout">
+    {/* Left content */}
+    <div className="about-content">
+      <div className="about-label">
+        <span className="about-label-dot"></span>
+        ABOUT ME
+      </div>
 
-  <p>
-    I'm Tejaswini, a full-stack developer who enjoys building
-    web applications and mobile experiences. I work across
-    frontend interfaces, backend APIs, and database-driven
-    applications to create practical digital solutions.
-  </p>
+      <h2 className="about-heading">
+        Developer by passion.
+        <br />
+        Problem solver <span>by nature.</span>
+      </h2>
 
-  <p>
-    I'm always learning, improving my development skills, and
-    exploring opportunities to collaborate with teams and
-    businesses on meaningful projects.
-  </p>
+      <p className="about-description">
+        I'm Tejaswini, a full-stack developer who enjoys building
+        web applications and mobile experiences. I work across
+        frontend interfaces, backend APIs, and database-driven
+        applications to create practical digital solutions.
+      </p>
+
+      <p className="about-description">
+        I'm always learning, improving my development skills, and
+        exploring opportunities to collaborate with teams and
+        businesses on meaningful projects.
+      </p>
+
+      <div className="about-highlights">
+        <div className="about-highlight">
+          <div className="about-highlight-icon">✦</div>
+          <span>Problem<br />Solver</span>
+        </div>
+
+        <div className="about-highlight">
+          <div className="about-highlight-icon">♧</div>
+          <span>Team<br />Player</span>
+        </div>
+
+        <div className="about-highlight">
+          <div className="about-highlight-icon">↗</div>
+          <span>Quick<br />Learner</span>
+        </div>
+
+        <div className="about-highlight">
+          <div className="about-highlight-icon">♡</div>
+          <span>Passionate<br />Developer</span>
+        </div>
+      </div>
+
+      <div className="about-facts">
+        <div className="about-fact">
+          <strong>React</strong>
+          <span>Web Development</span>
+        </div>
+
+        <div className="about-fact">
+          <strong>Flutter</strong>
+          <span>Mobile Apps</span>
+        </div>
+
+        <div className="about-fact">
+          <strong>Laravel</strong>
+          <span>Backend APIs</span>
+        </div>
+
+        <div className="about-fact">
+          <strong>Let's Talk</strong>
+          <span>Open to Opportunities</span>
+        </div>
+      </div>
+
+      <div className="about-actions">
+        <a href="#projects" className="about-btn about-btn-primary">
+          Explore My Work <span>↗</span>
+        </a>
+
+        <a href="#contact" className="about-btn about-btn-secondary">
+          <span>▢</span> Let's Connect
+        </a>
+      </div>
+    </div>
+
+    {/* Right visual — illustration, not a fake portrait */}
+    <div className="about-visual">
+      <div className="about-glow-circle"></div>
+      <div className="about-orbit about-orbit-one"></div>
+      <div className="about-orbit about-orbit-two"></div>
+
+      <div className="about-code-window">
+        <div className="about-code-top">
+          <span></span>
+          <span></span>
+          <span></span>
+          <small>tejaswini.dev</small>
+        </div>
+
+        <div className="about-code-body">
+          <p><span>const</span> developer = {'{'}</p>
+          <p>&nbsp;&nbsp;name: <b>'Tejaswini'</b>,</p>
+          <p>&nbsp;&nbsp;role: <b>'Full-Stack'</b>,</p>
+          <p>&nbsp;&nbsp;web: <i>'React'</i>,</p>
+          <p>&nbsp;&nbsp;mobile: <i>'Flutter'</i>,</p>
+          <p>&nbsp;&nbsp;backend: <i>'Laravel'</i></p>
+          <p>{'}'}</p>
+        </div>
+
+        <div className="about-code-footer">
+          <span className="about-status-dot"></span>
+          Building something meaningful
+        </div>
+      </div>
+
+      <div className="about-float-card about-float-top">
+        <div className="about-float-icon">⌘</div>
+        <div>
+          <strong>Continuous Learner</strong>
+          <p>Always exploring new technologies</p>
+        </div>
+      </div>
+
+      <div className="about-float-card about-float-middle">
+        <div className="about-float-icon">&lt;/&gt;</div>
+        <div>
+          <strong>Clean Code</strong>
+          <p>Practical and maintainable solutions</p>
+        </div>
+      </div>
+
+      <div className="about-float-card about-float-bottom">
+        <div className="about-float-icon">✧</div>
+        <div>
+          <strong>Creative Approach</strong>
+          <p>Turning ideas into user-friendly products</p>
+        </div>
+      </div>
+
+      <div className="about-quote">
+        <div className="about-quote-mark">“</div>
+        <p>
+          I believe in building digital solutions that are
+          not only functional but also create a positive
+          impact on users.
+        </p>
+        <span>— Tejaswini</span>
+      </div>
+    </div>
+  </div>
 </section>
+
 
  <section className="section" id="skills">
   <p className="eyebrow">MY TECH STACK</p>
