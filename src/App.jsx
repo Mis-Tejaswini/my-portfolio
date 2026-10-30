@@ -227,119 +227,128 @@ useEffect(() => {
     </div>
 
     {/* Right visual — illustration, not a fake portrait */}
-    <div className="about-visual">
-      <div className="about-glow-circle"></div>
-      <div className="about-orbit about-orbit-one"></div>
-      <div className="about-orbit about-orbit-two"></div>
-      <img src="public/images/about-tejaswini.png" alt="Tejaswini, Full-Stack Developer" className="about-profile-image"/>
+   
+<div className="about-visual about-visual-reference">
+  <div className="about-glow-circle"></div>
+  <div className="about-orbit about-orbit-one"></div>
+  <div className="about-orbit about-orbit-two"></div>
 
-      <div className="about-code-window">
-        <div className="about-code-top">
-          <span></span>
-          <span></span>
-          <span></span>
-          <small>tejaswini.dev</small>
-        </div>
+  <img
+    src="public/images/about-tejaswini.png"
+    alt="Tejaswini - Full Stack Developer"
+    className="about-profile-image"
+  />
 
-        <div className="about-code-body">
-          <p><span>const</span> developer = {'{'}</p>
-          <p>&nbsp;&nbsp;name: <b>'Tejaswini'</b>,</p>
-          <p>&nbsp;&nbsp;role: <b>'Full-Stack'</b>,</p>
-          <p>&nbsp;&nbsp;web: <i>'React'</i>,</p>
-          <p>&nbsp;&nbsp;mobile: <i>'Flutter'</i>,</p>
-          <p>&nbsp;&nbsp;backend: <i>'Laravel'</i></p>
-          <p>{'}'}</p>
-        </div>
+  <div className="about-float-card about-float-top">
+    <div className="about-float-icon">♧</div>
+    <div>
+      <strong>Continuous Learner</strong>
+      <p>Always exploring new technologies</p>
+    </div>
+  </div>
 
-        <div className="about-code-footer">
-          <span className="about-status-dot"></span>
-          Building something meaningful
-        </div>
+  <div className="about-float-card about-float-middle">
+    <div className="about-float-icon">&lt;/&gt;</div>
+    <div>
+      <strong>Clean Code</strong>
+      <p>Writing maintainable and scalable solutions</p>
+    </div>
+  </div>
+
+  <div className="about-float-card about-float-bottom">
+    <div className="about-float-icon">✧</div>
+    <div>
+      <strong>Creative Approach</strong>
+      <p>Turning ideas into user-friendly products</p>
+    </div>
+  </div>
+
+  <div className="about-quote about-quote-reference">
+    <div className="about-quote-mark">“</div>
+    <p>
+      I believe in building digital solutions that are
+      not only functional but also create a positive
+      impact on users.
+    </p>
+    <span>— Tejaswini</span>
+  </div>
+</div>
+
+  </div>
+</section>
+
+
+
+<section className="section skills-section" id="skills">
+  <p className="eyebrow">WHAT I WORK WITH</p>
+  <h2>My Tech <span>Stack</span></h2>
+  <p className="skills-intro">
+    Technologies and tools I use to transform ideas into functional
+    digital experiences.
+  </p>
+
+  <div className="skills-grid">
+    <div className="skill-card">
+      <div className="skill-card-icon">⚛</div>
+      <h3>Frontend Development</h3>
+      <p>Building responsive and interactive web interfaces.</p>
+      <div className="skill-tags">
+        <span>React</span><span>JavaScript</span>
+        <span>HTML5</span><span>CSS3</span>
       </div>
+    </div>
 
-      <div className="about-float-card about-float-top">
-        <div className="about-float-icon">⌘</div>
-        <div>
-          <strong>Continuous Learner</strong>
-          <p>Always exploring new technologies</p>
-        </div>
+    <div className="skill-card">
+      <div className="skill-card-icon">📱</div>
+      <h3>Mobile Development</h3>
+      <p>Creating cross-platform mobile applications.</p>
+      <div className="skill-tags">
+        <span>Flutter</span><span>Dart</span>
+        <span>REST API</span>
       </div>
+    </div>
 
-      <div className="about-float-card about-float-middle">
-        <div className="about-float-icon">&lt;/&gt;</div>
-        <div>
-          <strong>Clean Code</strong>
-          <p>Practical and maintainable solutions</p>
-        </div>
+    <div className="skill-card">
+      <div className="skill-card-icon">⚙</div>
+      <h3>Backend Development</h3>
+      <p>Developing application logic and backend services.</p>
+      <div className="skill-tags">
+        <span>Laravel</span><span>PHP</span>
+        <span>API Integration</span>
       </div>
+    </div>
 
-      <div className="about-float-card about-float-bottom">
-        <div className="about-float-icon">✧</div>
-        <div>
-          <strong>Creative Approach</strong>
-          <p>Turning ideas into user-friendly products</p>
-        </div>
+    <div className="skill-card">
+      <div className="skill-card-icon">🌐</div>
+      <h3>CMS & Websites</h3>
+      <p>Building and customizing business and ecommerce websites.</p>
+      <div className="skill-tags">
+        <span>WordPress</span><span>Elementor</span>
+        <span>WooCommerce</span>
       </div>
+    </div>
 
-      <div className="about-quote">
-        <div className="about-quote-mark">“</div>
-        <p>
-          I believe in building digital solutions that are
-          not only functional but also create a positive
-          impact on users.
-        </p>
-        <span>— Tejaswini</span>
+    <div className="skill-card">
+      <div className="skill-card-icon">🗄</div>
+      <h3>Database</h3>
+      <p>Working with structured data and application storage.</p>
+      <div className="skill-tags">
+        <span>MySQL</span><span>Database Design</span>
+      </div>
+    </div>
+
+    <div className="skill-card">
+      <div className="skill-card-icon">🛠</div>
+      <h3>Development Tools</h3>
+      <p>Tools I use for coding, testing and project development.</p>
+      <div className="skill-tags">
+        <span>VS Code</span><span>Git</span>
+        <span>GitHub</span><span>Postman</span>
       </div>
     </div>
   </div>
 </section>
 
-
- <section className="section" id="skills">
-  <p className="eyebrow">MY TECH STACK</p>
-  <h2>Technologies I <span>Work With</span></h2>
-  <p>
-    Tools and technologies I use to build digital products.
-  </p>
-
-  <div className="service-grid">
-    <article className="service-card">
-      <div className="service-icon">01</div>
-      <h3>Frontend</h3>
-      <p>React, JavaScript, HTML5, CSS3, responsive UI</p>
-    </article>
-
-    <article className="service-card">
-      <div className="service-icon">02</div>
-      <h3>Mobile Development</h3>
-      <p>Flutter, Dart, REST API integration, app interfaces</p>
-    </article>
-
-    <article className="service-card">
-      <div className="service-icon">03</div>
-      <h3>Backend</h3>
-      <p>Laravel, PHP, REST APIs, authentication</p>
-    </article>
-
-    <article className="service-card">
-      <div className="service-icon">04</div>
-      <h3>CMS & Websites</h3>
-      <p>WordPress, Elementor, website customization</p>
-    </article>
-
-    <article className="service-card">
-      <div className="service-icon">05</div>
-      <h3>Database</h3>
-      <p>Database design, queries, application data management</p>
-    </article>
-
-    <article className="service-card">
-      <div className="service-icon">06</div>
-      <h3>Development Tools</h3>
-      <p>Git, GitHub, VS Code, Postman</p>
-    </article>
-  </div>
-</section>
 
       <section className="section" id="services">
         <p className="eyebrow">WHAT I DO</p>
@@ -374,7 +383,7 @@ useEffect(() => {
     <article className="project-card">
       <img
         className="project-image"
-        src="/images/servicehub.png"
+        src="public/images/servicehub.png"
         alt="ServiceHub registration screen"
       />
 
@@ -390,7 +399,7 @@ useEffect(() => {
     <article className="project-card">
       <img
         className="project-image"
-        src="/images/dashboard-stats.jpg"
+        src="public/images/dashboard-stats.jpg"
         alt="E-commerce admin application dashboard"
       />
 
