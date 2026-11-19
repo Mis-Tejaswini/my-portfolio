@@ -234,7 +234,7 @@ useEffect(() => {
   <div className="about-orbit about-orbit-two"></div>
 
   <img
-    src="public/images/about-tejaswini.png"
+    src="/public/images/about-tejaswini.png"
     alt="Tejaswini - Full Stack Developer"
     className="about-profile-image"
   />
