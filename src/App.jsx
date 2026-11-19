@@ -234,7 +234,7 @@ useEffect(() => {
   <div className="about-orbit about-orbit-two"></div>
 
   <img
-    src="/images/about-tejaswini.png"
+    src={`${import.meta.env.BASE_URL}images/about-tejaswini.png`}
     alt="Tejaswini - Full Stack Developer"
     className="about-profile-image"
   />
@@ -383,7 +383,7 @@ useEffect(() => {
     <article className="project-card">
       <img
         className="project-image"
-        src="public/images/servicehub.png"
+        src={`${import.meta.env.BASE_URL}images/servicehub.png`}
         alt="ServiceHub registration screen"
       />
 
@@ -399,7 +399,7 @@ useEffect(() => {
     <article className="project-card">
       <img
         className="project-image"
-        src="public/images/dashboard-stats.jpg"
+        src={`${import.meta.env.BASE_URL}images/dashboard-stats.jpg`}
         alt="E-commerce admin application dashboard"
       />
 
